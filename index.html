@@ -52,7 +52,7 @@
                 </details>
 
                 <h2>Qualités personnelles</h2>
-                <canvas id="myChart" style="width:100%;max-width:400px"></canvas>
+                <canvas id="myChart" style="width:100%;"></canvas>
                 <h2>Centre d'interet</h2>
                 <div class="interet">
                     <span><img src="/swimming.png" alt="swimming logo" width="15px"> Natation</span>
@@ -73,17 +73,13 @@
     </article>
 
     <script>
+        window.addEventListener("resize", setChartWidth);
+        // 
         var xValues = ["Autonomie", "Travail en équipe", "Adaptation", "Rigoureux", "Flexibilité"];
         var yValues = [25, 25, 20, 20, 10];
-        var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#e8c3b9",
-          "#1e7145"
-        ];
-        
-        new Chart("myChart", {
+        var barColors = ["#b91d47","#00aba9","#2b5797","#e8c3b9","#1e7145"];
+
+        myChart = new Chart("myChart", {
           type: "doughnut",
           data: {
             labels: xValues,
@@ -92,15 +88,19 @@
               data: yValues
             }]
           },
-          options: {
-            title: {
-              display: false,
-              text: "Qualités personnelles"
-            },
-            legend: {display:false}
+          options: {legend: {position:'right',display:true}
           }
         });
-        </script>
+        setChartWidth()
+        function setChartWidth() {
+            if (window.innerWidth < 600) {
+                myChart.options.legend.display = true
+            } else {
+                myChart.options.legend.display = false    
+            }
+            myChart.update()
+            }
+    </script>
 
 </body>
 </html>
