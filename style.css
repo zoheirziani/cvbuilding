@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 1rem;
+    font-size: 10px;
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
@@ -16,9 +16,17 @@ body {
     background-color: rgb(247, 248, 250);
   }
 
+  h2 {
+    font-size: 1.5em;
+    border-bottom: 0.5px solid #434E5E;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+
+  }
+
   article {
     width: 595px;
-    height: 842px;
+    min-height: 842px;
     background-color: white;
     margin: auto;
     margin-top: 20px;
@@ -44,19 +52,26 @@ body {
 
 .profil {
   margin: 0px;
+  -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+            filter: grayscale(100%); 
 }
 
-.name {
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: justify;
+}
+
+section {
   padding: 10px;
-  padding-right: 20px;
-  color: white;
+  width: 60%;  
 }
-.name h1 {
-  color: yellow;
-}
-.name p a {
-  color: white;
-}
-.name p a:hover {
-  color: lightgray;
+
+aside {
+  width: 40%;
+  min-height:100%;
+  background-color: #212529;
 }
