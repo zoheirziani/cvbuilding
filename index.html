@@ -6,25 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zoheir Ziani CV</title>
     <link rel="stylesheet" href="/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 <body>
     <article id="cv">
         <header id="myHeader">
-            <img src="/profil.jpg" alt="profil" class="profil" height="140px">
+            <img src="/profil.jpg" alt="profil" class="profil" height="100px">
         </header>
         <section class="about">
             <h2>A propos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>Lorem ipsum dolor sit amet. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
         </section>
         <div class="container">
             <section class="main">
-                
+                <h2>Formation et diplômes</h2>
+                <div class="formation"></div>
+                <h2>Expériences professionnelles</h2>
+                <div class="experience"></div>
             </section>
             <aside>
+                <h2>Langues</h2>
+                <ul style="list-style: none;">
+                    <li><span class="fi fi-ma fis"></span> <strong>Arabe</strong>  <span style="float:right">(langue maternelle)</span></li>
+                    <li><span class="fi fi-fr fis"></span> <strong>Français</strong>  <span style="float:right">(Niveau avancé)</span></li>
+                    <li><span class="fi fi-gb fis"></span> <strong>Anglais</strong>  <span style="float:right">(scientifique et technique)</span></li>
+                </ul>
+                <h2>Informatique</h2>
+                <details>
+                    <summary>Codage</summary>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </details>
+                <details>
+                    <summary>Système</summary>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </details>
+                <details>
+                    <summary>Logiciel</summary>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </details>
+                <details>
+                    <summary>Developpement web</summary>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </details>
 
+                <h2>Qualités personnelles</h2>
+                <canvas id="myChart" style="width:100%;max-width:400px"></canvas>
+                <h2>Centre d'interet</h2>
+                <div class="interet">
+                    <span><img src="/swimming.png" alt="swimming logo" width="15px"> Natation</span>
+                    <span><img src="/programmer.png" alt="programmer logo"  width="15px"> Programmation</span>
+                    <span><img src="/3714324.png" alt="bicycle logo" width="15px"> Cyclisme</span>
+                    <span><img src="/drawing.png" alt="drawing logo" width="15px">Dessin</span>
+                    <span><img src="/hiking.png" alt="hiking logo" width="15px"> Randonnée pedestre</span>
+                </div>
+                <h2>Expertise</h2>
+                <div class="expertise">
+                    <span>Optique non linéaire</span>
+                    <span>Fibre optique</span>
+                    <span>Plasmonique</span>
+                    <span>Dynamique non linéaire</span>
+                </div>
             </aside>
         </div>
     </article>
+
+    <script>
+        var xValues = ["Autonomie", "Travail en équipe", "Adaptation", "Rigoureux", "Flexibilité"];
+        var yValues = [25, 25, 20, 20, 10];
+        var barColors = [
+          "#b91d47",
+          "#00aba9",
+          "#2b5797",
+          "#e8c3b9",
+          "#1e7145"
+        ];
+        
+        new Chart("myChart", {
+          type: "doughnut",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            title: {
+              display: false,
+              text: "Qualités personnelles"
+            },
+            legend: {display:false}
+          }
+        });
+        </script>
+
 </body>
 </html>
