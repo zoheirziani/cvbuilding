@@ -143,3 +143,7 @@ aside {
   background-color: #434E5E;
   transform: scale(1.1);
 }
+.web {
+  display: flex;
+  justify-content: space-around;
+}
