@@ -1,3 +1,13 @@
+:root {
+  --color1:  rgb(247, 248, 250);;
+  --color2: #133863;
+
+  --cvheight:297mm;
+  --cvwidth:210mm;
+  --height1:3.5cm;
+  --height2:2.3cm;
+}
+
 * {
   box-sizing: border-box;
   margin: 0; padding: 0;
@@ -7,36 +17,97 @@
 body {
     margin: 0;
     font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: rgb(247, 248, 250);
+    background-color: var(--color1)
   }
 
-  h2 {
-    font-size: 1.5em;
-    border-bottom: 0.5px solid #434E5E;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+h2 {
+  display: inline-block;
+  position: relative;
+  font-size: 1.2em;
+  /* border-bottom: 0.5px solid #434E5E; */
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 5px;
+}
 
-  }
 
-  article {
-    width: 210mm;
-    height: 297mm;
-    background-color: white;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    box-shadow: 7px 7px 5px #eee, -7px -7px 5px #eee;
-  }
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right:0;
+  height: 2px;
+  transform: scaleX(0);
+  background: #333;
+  transition: 0.7s transform cubic-bezier(0.06, 0.9, 0.28, 1);
+}
 
-  
+h2:hover::after{
+  transform: scaleX(1)
+}
+
+p {
+  text-align: justify;
+}
+
+article {
+  width: var(--cvwidth);
+  height: var(--cvheight);
+  background-color: white;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  box-shadow: 7px 7px 5px #eee, -7px -7px 5px #eee;
+}
+
+
 @media (max-width:240mm) {
   article {
     max-width: 90%;
+  }
+}
+
+header {
+  background-color: var(--color2);
+  height: var(--height1);
+}
+
+.about {
+  background-color: #eee;
+  height: var(--height2);
+  margin: 1%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1%;
+}
+
+.main {
+  width: 59.5%;
+  height: calc(var(--cvheight) - var(--height1) - var(--height2) - 20px);
+  background-color: #efefef;
+}
+
+aside {
+  width: 39.5%;
+  height: calc(var(--cvheight) - var(--height1) - var(--height2) -20px);
+  background-color: #ffeeff;
+}
+
+@media screen and (max-width:600px){
+  article {
+    min-height:fit-content;
+  }
+  .main, aside {
+    width:100%;
   }
 }
