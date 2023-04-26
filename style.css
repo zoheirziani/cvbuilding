@@ -1,18 +1,19 @@
 :root {
-  --color1:  rgb(247, 248, 250);;
-  --color2: #133863;
-
+  --color0:  rgb(247, 248, 250);
+  --color1: #E1ECF9;
+  --color2: #609CE1;
+  --color3: #236AB9;
+  --color4: #133863;
+  --color5: #133863;
   --cvheight:297mm;
   --cvwidth:210mm;
   --height1:3.5cm;
-  --height2:2.3cm;
+  --height2:2cm;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0; padding: 0;
-  text-decoration: none;
-}
+/* General */
+
+* {box-sizing: border-box;margin: 0; padding: 0;text-decoration: none;}
 
 body {
     margin: 0;
@@ -22,17 +23,28 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: var(--color1)
+    background-color: var(--color0)
   }
 
 h2 {
-  display: inline-block;
+  display: block;
   position: relative;
   font-size: 1.2em;
-  /* border-bottom: 0.5px solid #434E5E; */
   padding-top: 2px;
+  padding-left: 5px;
   padding-bottom: 2px;
   margin-bottom: 5px;
+  color: white;
+  border-left: 4px solid red;
+  background-image: linear-gradient(to right, var(--color5), var(--color4), var(--color3), var(--color2),var(--color1), #fff);
+}
+
+h3 {
+  display: inline-block;
+  position: relative;
+  font-size: 1.1em;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 
@@ -44,17 +56,15 @@ h2::after {
   right:0;
   height: 2px;
   transform: scaleX(0);
-  background: #333;
+  background: var(--color4);
   transition: 0.7s transform cubic-bezier(0.06, 0.9, 0.28, 1);
 }
+h2:hover{scale: 1.005;}
+h2:hover::after{transform: scaleX(1)}
 
-h2:hover::after{
-  transform: scaleX(1)
-}
+p {text-align: justify;}
 
-p {
-  text-align: justify;
-}
+/* Layout */
 
 article {
   width: var(--cvwidth);
@@ -66,7 +76,6 @@ article {
   box-shadow: 7px 7px 5px #eee, -7px -7px 5px #eee;
 }
 
-
 @media (max-width:240mm) {
   article {
     max-width: 90%;
@@ -74,13 +83,14 @@ article {
 }
 
 header {
-  background-color: var(--color2);
+  background-color: var(--color4);
   height: var(--height1);
 }
 
 .about {
-  background-color: #eee;
-  height: var(--height2);
+  /* background-color: var(--color1); */
+  min-height: var(--height2);
+  height: fit-content;
   margin: 1%;
 }
 
@@ -94,13 +104,13 @@ header {
 .main {
   width: 59.5%;
   height: calc(var(--cvheight) - var(--height1) - var(--height2) - 20px);
-  background-color: #efefef;
+  /* background-color: var(--color1); */
 }
 
 aside {
   width: 39.5%;
   height: calc(var(--cvheight) - var(--height1) - var(--height2) -20px);
-  background-color: #ffeeff;
+  /* background-color: var(--color1); */
 }
 
 @media screen and (max-width:600px){
@@ -111,3 +121,19 @@ aside {
     width:100%;
   }
 }
+
+/* Formations et Expériences*/
+
+.timeline {
+  width:100%;
+  /* background-color: var(--color1); */
+  color: var(--color5);
+}
+.timeline ul {list-style-type:none;border-left:2px solid var(--color3);padding-left: 5px;}
+.timeline ul li {position:relative;cursor:pointer;display: grid;gap: 2px;grid-auto-columns: 1fr;}
+.timeline ul li h3 {color:#34ace0;grid-column: 1 / span 2;grid-row: 1}
+.timeline ul li span {grid-column: 3;grid-row: 1; background-color:var(--color2);color:var(--color1);border-radius:25px;text-align: center; padding-top: 3px;}
+.timeline ul li .content {grid-column: 1 / span 3;grid-row: 2;}
+.timeline ul li:hover {background-color:var(--color1);transition:.5s;} 
+.timeline ul li:before {position:absolute;content:'';width:10px;height:10px;background-color:#34ace0;border-radius:50%;left:-11px;top:25px;transition:.5s;}
+.timeline ul li:hover:before {background-color:#0F0;box-shadow:0px 0px 10px 2px #0F0;} 
