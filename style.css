@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   text-decoration: none;
 }
 
@@ -35,115 +34,9 @@ body {
     box-shadow: 7px 7px 5px #eee, -7px -7px 5px #eee;
   }
 
-  section, aside {
-    padding: 10px;
-    width: 100%;  
+  
+@media (max-width:240mm) {
+  article {
+    max-width: 90%;
   }
-
-  @media (max-width:240mm) {
-    article {
-      max-width: 90%;
-    }
-  }
-
-  #myHeader {
-    width: 100%;
-    height: 100px;
-    background-color:#434E5E ;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.profil {
-  margin: 0px;
-  transition: 0.5s ease-in-out;
-  -webkit-filter: grayscale(100%);
-       -moz-filter: grayscale(100%);
-         -o-filter: grayscale(100%);
-        -ms-filter: grayscale(100%);
-            filter: grayscale(100%);
-}
-.profil:hover {
-  transform: scale(1.05);
-  -webkit-filter: grayscale(0%);
-       -moz-filter: grayscale(0%);
-         -o-filter: grayscale(0%);
-        -ms-filter: grayscale(0%);
-            filter: grayscale(0%);
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: justify;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.main {
-  width: 59%;
-  min-height:400px;
-  background-color: #ffe;
-}
-
-.formation, .experience {
-  background-color: #212529;
-  height: 200px;
-}
-
-aside {
-  width: 39%;
-  min-height:400px;
-  background-color: #eee;
-}
-@media all and (max-width:600px)  {
-  .main {
-    width: 100%;
-  }
-  aside {
-    width: 100%;
-    margin-top: 10px;
-  }
-}
-.fi {  transition: 0.5s ease-in-out;}
-.fi:hover {
-  transform: scale(1.5);
-}
-.expertise, .interet {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.interet span {
-  background-color: lightgray;
-  padding: 2px; margin: 3px;
-  border-radius: 10px;
-  transition: 0.2s ease-in-out;
-}
-
-.interet span img {
-  vertical-align: middle;
-}
-
-.interet span:hover {
-  color: #eee;
-  background-color: #434E5E;
-  transform: scale(1.1);
-}
-.expertise span {
-  background-color: lightgray;
-  padding: 2px; margin: 3px;
-  border-radius: 10px;
-  transition: 0.2s ease-in-out;
-}
-.expertise span:hover {
-  color: #eee;
-  background-color: #434E5E;
-  transform: scale(1.1);
-}
-.web {
-  display: flex;
-  justify-content: space-around;
 }
